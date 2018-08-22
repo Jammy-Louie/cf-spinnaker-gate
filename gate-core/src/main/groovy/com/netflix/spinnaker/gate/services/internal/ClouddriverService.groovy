@@ -335,4 +335,10 @@ interface ClouddriverService {
   Map getManifest(@Path(value = 'account') String account,
                   @Path(value = 'location') String location,
                   @Path(value = 'name') String name)
-}
+
+  @GET("/service/{account}/services")
+  List<Map> listServices(@Query(value = "provider") String provider,
+                         @Query(value = "cloudProvider") String cloudProvider,
+                         @Path(value = 'account') String account)
+
+  }
